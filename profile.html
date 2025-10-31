@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name ="viewport" content="width=device-width,initial-scale=1.0">
+        <style>
+            /* Base styles for body and container */
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
+  margin: 0;
+  padding: 0;
+}
+
+.profile-container {
+  max-width: 500px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.07);
+  margin: 60px auto;
+  padding: 36px;
+  text-align: center;
+}
+
+/* Profile Picture */
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.11);
+  border: 4px solid #07a5d9;
+  margin-bottom: 16px;
+}
+
+/* Name Styling */
+.profile-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 8px 0;
+}
+
+/* Bio Styling */
+.profile-bio {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+/* Skills List */
+.profile-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 18px 0;
+}
+
+.profile-skill-tag {
+  background: linear-gradient(90deg, #07a5d9 40%, #69cff6 100%);
+  color: #fff;
+  font-weight: 500;
+  padding: 7px 20px;
+  border-radius: 16px;
+  font-size: 0.95rem;
+}
+
+/* Links styling */
+.profile-links a {
+  display: inline-block;
+  margin: 10px 15px;
+  color: #07a5d9;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color .2s, transform .2s;
+}
+.profile-links a:hover {
+  color: #015a72;
+  transform: translateY(-3px) scale(1.07);
+}
+</style>
+</head>
+<body>
+  <div class="profile-container">
+    <img src="profile.jpg" alt="Profile Photo" class="profile-pic">
+    <div class="profile-name">Apsan Thapa</div>
+    <div class="profile-bio">
+      Web developer and UI/UX enthusiast.<br>
+      Passionate about building clean, modern, and scalable web experiences.<br>
+    <div class="recent-project" style="margin-top: 28px; text-align: left;">
+        <h3 style="color:#07a5d9;">Recent Project</h3>
+    <div style="display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap;">
+    <!-- Image Example -->
+    <img src="project1.jpg" alt="Project Screenshot" style="width:150px; height:auto; border-radius:12px; box-shadow:0 2px 12px rgba(7,165,217,.09); margin-bottom:10px;">
+
+    <!-- Video Example -->
+    <video width="220" controls style="border-radius:12px; box-shadow:0 2px 12px rgba(7,165,217,.09); margin-bottom:10px;">
+      <source src="project1vid.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+     <div style="min-width:220px; max-width:350px;">
+      <strong>Portfolio Website Revamp</strong><br>
+      <small>Tech Stack: React, CSS Animation, Figma</small>
+      <p>
+        It is IOT based project as we were selected in national level hackathon held by KLECET Chikodi. It was a great oppurtunity to connect software enthusiast like us.
+      </p>
+      <ul>
+        <li>Problem statement: </li>
+        <li>Notify user about gas leak and low gas</li>
+        <li>Material Used: ESP32 devkit for connecting with wifi, Software for notifying use abou gas leak and low gas .</li>
+      </ul>
+    </div>
+    </div>
+    <div style="display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap;">
+    <!-- Image Example -->
+    <img src="project1.jpg" alt="Project Screenshot" style="width:150px; height:auto; border-radius:12px; box-shadow:0 2px 12px rgba(7,165,217,.09); margin-bottom:10px;">
+
+    <!-- Video Example -->
+    <video width="220" controls style="border-radius:12px; box-shadow:0 2px 12px rgba(7,165,217,.09); margin-bottom:10px;">
+      <source src="project2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    </div>
+    
+    </div>
+
+    </div>
+<div class="profile-container">
+  <!-- Other Profile Content Here -->
+  
+  <!-- Skills Section -->
+  <div class="MySkills">
+    <div class="SkillTag">HTML</div>
+    <div class="SkillTag">CSS</div>
+    <div class="SkillTag">JavaScript</div>
+    <div class="SkillTag">React</div>
+    <div class="SkillTag">UI/UX</div>
+  </div>
+
+  <!-- Other content, like links or recent projects, can go below -->
+</div>
+    <div class="profile-links">
+      <a href="https://github.com/apsanthapa" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/apsan-thapa-0540b5294/" target="_blank">LinkedIn</a>
+      <a href="apsanthapa17@gmail.com">Email</a>
+    </div>
+  </div>
+</body>
