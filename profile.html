@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!D0OCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -13,7 +13,7 @@ body {
 }
 
 .profile-container {
-  max-width: 500px;
+  max-width:900px;
   background: #fff;
   border-radius: 24px;
   box-shadow: 0 4px 40px rgba(0,0,0,0.07);
@@ -66,6 +66,44 @@ body {
   border-radius: 16px;
   font-size: 0.95rem;
 }
+.profile-achievement {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: #f3f8ff;
+  color: #24385b;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin-bottom: 16px;
+
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+  letter-spacing: 0.5px;
+}
+
+.profile-achievement img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  border: 2px solid #f4f6f7;
+  background: #fff;
+}
+
+.profile-achievement .achievement-images {
+  display :flex;
+  flex-direction:row;
+  margin-bottom: 8px;
+}
+
+.profile-achievement p {
+  margin: 0;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
 
 /* Links styling */
 .profile-links a {
@@ -89,11 +127,11 @@ body {
     <div class="profile-bio">
       Web developer and UI/UX enthusiast.<br>
       Passionate about building clean, modern, and scalable web experiences.<br>
-    <div class="recent-project" style="margin-top: 28px; text-align: left;">
+    <div class="recent-project" style="margin-top: 28px; text-align: center ;">
         <h3 style="color:#07a5d9;">Recent Project</h3>
     <div style="display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap;">
     <!-- Image Example -->
-    <img src="project1.jpg" alt="Project Screenshot" style="width:150px; height:auto; border-radius:12px; box-shadow:0 2px 12px rgba(7,165,217,.09); margin-bottom:10px;">
+    <img src="project1.jpg" alt="Project Screenshot" style="width:200px; height:auto; border-radius:12px; box-shadow:0 2px 12px rgba(7,165,217,.09); margin-bottom:10px;">
 
     <!-- Video Example -->
     <video width="220" controls style="border-radius:12px; box-shadow:0 2px 12px rgba(7,165,217,.09); margin-bottom:10px;">
@@ -102,12 +140,12 @@ body {
     </video>
      <div style="min-width:220px; max-width:350px;">
       <strong>Portfolio Website Revamp</strong><br>
-      <small>Tech Stack: React, CSS Animation, Figma</small>
+      <small>Tech Stack:C++,java,html,js</small>
       <p>
-        It is IOT based project as we were selected in national level hackathon held by KLECET Chikodi. It was a great oppurtunity to connect software enthusiast like us.
+        It is IOT based project as we were selected in national level hackathon held by KLECET Chikodi. It was a great oppurtunity to connect with software enthusiast like us.
       </p>
       <ul>
-        <li>Problem statement: </li>
+        <li>Problem statement:Building IOT based object to detect low gas pressure and gas leak </li>
         <li>Notify user about gas leak and low gas</li>
         <li>Material Used: ESP32 devkit for connecting with wifi, Software for notifying use abou gas leak and low gas .</li>
       </ul>
@@ -138,9 +176,24 @@ body {
     <div class="SkillTag">React</div>
     <div class="SkillTag">UI/UX</div>
   </div>
+  </div>
+    <div class ="profile-achievement">
+      <div class="profile-achievement img">
+      <img src="achievement.jpg" alt="profile-achievement">
+      </div>
+      <p>Recently came runnerup in Escape Asylum where the organizer tested our teamwork and how we co-operate with each other. This event was held by member of IEEE KLE Hubali, It was a great event.
+    </div>
+    <div>
+       <div class ="profile-achievement">
+        <div class ="profile-achievement img">
+      <img src="achie2.1.jpg" alt="profile-achievement">
+      <img src="achie2.5.jpg" alt="profile-achievement">
+      <img src="achie2.4.jpg" alt="profile-achievement">
+      </div>
+      <p>🏆 Participated in INVENTRA-2K25, a 24-hour National Level Hackathon at KLE College of Engineering & Technology, Chikodi. Presented a remarkable idea recognized for its innovation and technical excellence.</p>
+      </div>
 
   <!-- Other content, like links or recent projects, can go below -->
-</div>
     <div class="profile-links">
       <a href="https://github.com/apsanthapa" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/apsan-thapa-0540b5294/" target="_blank">LinkedIn</a>
