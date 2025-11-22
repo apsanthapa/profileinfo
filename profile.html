@@ -252,7 +252,7 @@
 
 <script>
 async function downloadResumePDF() {
-  const pdfUrl = "/mnt/data/Apsan_Thapa_Resume_With_CareerGoals.pdf";
+  const pdfUrl = "https://apsanthapa.github.io/profileinfo/Apsan_Thapa_Resume_With_CareerGoals.pdf";
   try {
     const resp = await fetch(pdfUrl, { method: 'GET' });
     if (!resp.ok) throw new Error('HTTP ' + resp.status + ' — file not reachable');
