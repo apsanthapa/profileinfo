@@ -244,24 +244,36 @@
         </div>
       </div>
 
-      <!-- Download Button at the Bottom -->
-      <div style="text-align: center; padding: 40px 20px;">
-        <button class="download-btn" onclick="downloadPDF()">📥 Download Portfolio as PDF</button>
-      </div>
 
-      <!-- JavaScript for PDF Download -->
-      <script>
-        function downloadPDF() {
-          const element = document.getElementById('content-to-download');
-          const opt = {
-            margin: 10,
-            filename: 'Apsan_Thapa_Portfolio.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2 },
-            jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
-          };
-          html2pdf().set(opt).from(element).save();
-        }
-      </script>
+ <!-- Download Button -->
+  <div>
+<button onclick="downloadResumePDF()" class="download-btn">📥 Download PDF</button>
+</div>
+
+<script>
+async function downloadResumePDF() {
+  const pdfUrl = "/mnt/data/Apsan_Thapa_Resume_With_CareerGoals.pdf";
+  try {
+    const resp = await fetch(pdfUrl, { method: 'GET' });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status + ' — file not reachable');
+    const blob = await resp.blob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Apsan_Thapa_Resume.pdf';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  } catch (err) {
+    console.error('Download error:', err);
+    alert('Download failed: ' + err.message + '\n\nCheck that the file is accessible at:\n' + pdfUrl);
+  }
+}
+
+document.getElementById('dlBtn').addEventListener('click', downloadResumePDF);
+</script>
+
+
     </body>
 </html>
