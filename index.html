@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animated Character - Resume Link</title>
+    <style>
+        body {
+            background: #f4f7fa;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .animated-character {
+            display: inline-block;
+            margin: 40px 0;
+            cursor: pointer;
+            animation: floatAnim 2s ease-in-out infinite;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.09);
+            transition: transform 0.2s;
+        }
+        .animated-character:hover {
+            transform: scale(1.04);
+            box-shadow: 0 12px 36px rgba(0,0,0,0.17);
+        }
+        @keyframes floatAnim {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-22px); }
+            100% { transform: translateY(0px); }
+        }
+        .resume-text {
+            font-size: 1.3em;
+            margin-top: 20px;
+            color: #2a345b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome to My Portfolio!</h2>
+    <div onclick="window.open('profile.html','_blank')" title="Click to view my resume">
+        <img src="d93d429f-1947-453c-922c-0f5c6b57ddcf.png" alt="Animated Character" class="animated-character" width="260" />
+    </div>
+    <div class="resume-text">Click the character to view my resume!</div>
+</body>
+</html>

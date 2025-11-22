@@ -1,214 +1,267 @@
-<!D0OCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name ="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Apsan Thapa - Portfolio</title>
+        <!-- Add html2pdf library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
         <style>
             /* Base styles for body and container */
-body {
-  font-family: 'Montserrat', Arial, sans-serif;
-  background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
-  margin: 0;
-  padding: 0;
-}
+            body {
+              font-family: 'Montserrat', Arial, sans-serif;
+              background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
+              margin: 0;
+              padding: 0;
+            }
 
-.profile-container {
-  max-width:900px;
-  background: #fff;
-  border-radius: 24px;
-  box-shadow: 0 4px 40px rgba(0,0,0,0.07);
-  margin: 60px auto;
-  padding: 36px;
-  text-align: center;
-}
+            .profile-container {
+              max-width:900px;
+              background: linear-gradient(center, #c17a7a 0%, #6259b6 100%);
+              border-radius: 24px;
+              box-shadow: 0 4px 40px rgba(0,0,0,0.07);
+              margin: 60px auto;
+              padding: 36px;
+              text-align: center;
+            }
 
-/* Profile Picture */
-.profile-pic {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.11);
-  border: 4px solid #07a5d9;
-  margin-bottom: 16px;
-}
+            /* Profile Picture */
+            .profile-pic {
+              width: 120px;
+              height: 120px;
+              object-fit: cover;
+              border-radius: 50%;
+              box-shadow: 0 4px 24px rgba(0,0,0,0.11);
+              border: 4px solid #07a5d9;
+              margin-bottom: 16px;
+            }
 
-/* Name Styling */
-.profile-name {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #333;
-  margin: 8px 0;
-}
+            /* Name Styling */
+            .profile-name {
+              font-size: 2.5rem;
+              font-weight: bold;
+              color: #333;
+              margin: 8px 0;
+            }
 
-/* Bio Styling */
-.profile-bio {
-  color: #555;
-  font-size: 1.1rem;
-  margin-bottom: 16px;
-  line-height: 1.7;
-}
+            /* Bio Styling */
+            .profile-bio {
+              color: #555;
+              font-size: 1.1rem;
+              margin-bottom: 16px;
+              line-height: 1.7;
+            }
 
-/* Skills List */
-.profile-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  margin: 18px 0;
-}
+            /* Skills List */
+            .profile-skills {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 8px;
+              justify-content: center;
+              margin: 18px 0;
+            }
 
-.profile-skill-tag {
-  background: linear-gradient(90deg, #07a5d9 40%, #69cff6 100%);
-  color: #fff;
-  font-weight: 500;
-  padding: 7px 20px;
-  border-radius: 16px;
-  font-size: 0.95rem;
-}
-.profile-achievement {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  background: #f3f8ff;
-  color: #24385b;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 10px 20px;
-  margin-bottom: 16px;
+            .profile-skill-tag {
+              background: linear-gradient(90deg, #07a5d9 40%, #69cff6 100%);
+              color: #fff;
+              font-weight: 500;
+              padding: 7px 20px;
+              border-radius: 16px;
+              font-size: 0.95rem;
+            }
 
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
-  letter-spacing: 0.5px;
-}
+            .profile-achievement {
+              display: flex;
+              flex-direction: row;
+              align-items: flex-start;
+              background: #f3f8ff;
+              color: #24385b;
+              font-size: 1.1rem;
+              font-weight: 600;
+              padding: 10px 20px;
+              margin-bottom: 16px;
+              border-radius: 6px;
+              box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+              letter-spacing: 0.5px;
+            }
 
-.profile-achievement img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  margin-right: 10px;
-  margin-bottom: 8px;
-  border: 2px solid #f4f6f7;
-  background: #fff;
-}
+            .profile-achievement img {
+              width: 150px;
+              height: 150px;
+              object-fit: cover;
+              margin-right: 10px;
+              margin-bottom: 8px;
+              border: 2px solid #f4f6f7;
+              background: #fff;
+            }
 
-.profile-achievement .achievement-images {
-  display :flex;
-  flex-direction:row;
-  margin-bottom: 8px;
-}
+            .profile-achievement .achievement-images {
+              display: flex;
+              flex-direction: row;
+              margin-bottom: 8px;
+            }
 
-.profile-achievement p {
-  margin: 0;
-  font-weight: normal;
-  font-size: 1rem;
-}
+            .profile-achievement p {
+              margin: 0;
+              font-weight: normal;
+              font-size: 1rem;
+            }
 
+            /* Links styling */
+            .profile-links a {
+              display: inline-block;
+              margin: 10px 15px;
+              color: #07a5d9;
+              text-decoration: none;
+              font-weight: bold;
+              transition: color .2s, transform .2s;
+            }
 
-/* Links styling */
-.profile-links a {
-  display: inline-block;
-  margin: 10px 15px;
-  color: #07a5d9;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color .2s, transform .2s;
-}
-.profile-links a:hover {
-  color: #015a72;
-  transform: translateY(-3px) scale(1.07);
-}
-</style>
-</head>
-<body>
-  <div class="profile-container">
-    <img src="profile.jpg" alt="Profile Photo" class="profile-pic">
-    <div class="profile-name">Apsan Thapa</div>
-    <div class="profile-bio">
-      Web developer and UI/UX enthusiast.<br>
-      Passionate about building clean, modern, and scalable web experiences.<br>
-    <div class="recent-project" style="margin-top: 28px; text-align: center ;">
-        <h3 style="color:#07a5d9;">Recent Project</h3>
-    <div style="display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap;">
-    <!-- Image Example -->
-    <img src="project1.jpg" alt="Project Screenshot" style="width:200px; height:auto; border-radius:12px; box-shadow:0 2px 12px rgba(7,165,217,.09); margin-bottom:10px;">
+            .profile-links a:hover {
+              color: #015a72;
+              transform: translateY(-3px) scale(1.07);
+            }
 
-    <!-- Video Example -->
-    <video width="220" controls style="border-radius:12px; box-shadow:0 2px 12px rgba(7,165,217,.09); margin-bottom:10px;">
-      <source src="project1vid.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-     <div style="min-width:220px; max-width:350px;">
-      <strong>Portfolio Website Revamp</strong><br>
-      <small>Tech Stack:C++,java,html,js</small>
-      <p>
-        It is IOT based project as we were selected in national level hackathon held by KLECET Chikodi. It was a great oppurtunity to connect with software enthusiast like us.
-      </p>
-      <ul>
-        <li>Problem statement:Building IOT based object to detect low gas pressure and gas leak </li>
-        <li>Notify user about gas leak and low gas</li>
-        <li>Material Used: ESP32 devkit for connecting with wifi, Software for notifying use abou gas leak and low gas .</li>
-      </ul>
-    </div>
-    </div>
-    <div style="display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap;">
-    <!-- Image Example -->
-    <img src="WhatsApp Image 2025-11-17 at 19.30.38_2c361b50.jpg" alt="Project Screenshot" style="width:150px; height:auto; border-radius:12px; box-shadow:0 2px 12px rgba(7,165,217,.09); margin-bottom:10px;">
+            /* Download Button Styling */
+            .download-btn {
+              background: linear-gradient(90deg, #07a5d9 40%, #69cff6 100%);
+              color: white;
+              border: none;
+              padding: 14px 40px;
+              border-radius: 8px;
+              font-size: 1.1rem;
+              font-weight: bold;
+              cursor: pointer;
+              margin: 40px auto;
+              transition: all 0.3s ease;
+              box-shadow: 0 4px 12px rgba(7,165,217,0.3);
+              display: block;
+            }
 
-    <!-- Video Example -->
-    <video width="220" controls style="border-radius:12px; box-shadow:0 2px 12px rgba(7,165,217,.09); margin-bottom:10px;">
-      <source src="project2.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div style="min-width:220px; max-width:350px;">
-      <strong>Mini Project</strong><br>
-      <small>Tech Stack:C++,IOT,Electronics</small>
-      <p>
-       We choose this topic as it has both hardware and software rolled in and work together.
-      <ul>
-        <li>Problem statement: Automation of Robotic Arm </li>
-        <li>Pick And place as a basic operation</li>
-        <li>Material Used: Ardino UNO, Jumper wire, C++, Arduino IDE, Ultrasonic sensor.</li>
-      </ul>
-    </div>
-    </div>
-    
-    </div>
+            .download-btn:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 6px 20px rgba(7,165,217,0.4);
+              background: linear-gradient(90deg, #0591c3 40%, #5ab8e0 100%);
+            }
 
-    </div>
-<div class="profile-container">
-  <!-- Other Profile Content Here -->
-  
-  <!-- Skills Section -->
-  <div class="MySkills">
-    <div class="SkillTag">HTML</div>
-    <div class="SkillTag">CSS</div>
-    <div class="SkillTag">JavaScript</div>
-    <div class="SkillTag">React</div>
-    <div class="SkillTag">UI/UX</div>
-  </div>
-  </div>
-    <div class ="profile-achievement">
-      <div class="profile-achievement img">
-      <img src="achievement.jpg" alt="profile-achievement">
+            .download-btn:active {
+              transform: translateY(0);
+            }
+
+            @media print {
+              .download-btn {
+                display: none;
+              }
+            }
+        </style>
+    </head>
+    <body>
+      <!-- Main Profile Content (This will be converted to PDF) -->
+      <div id="content-to-download">
+        <div class="profile-container">
+          <img src="profile.jpg" alt="Profile Photo" class="profile-pic">
+          <div class="profile-name">Apsan Thapa</div>
+          <div class="profile-bio">
+            Web developer and UI/UX enthusiast.<br>
+            Passionate about building clean, modern, and scalable web experiences.<br>
+          </div>
+
+          <div class="recent-project" style="margin-top: 28px; text-align: center;">
+            <h3 style="color:#07a5d9;">Recent Project</h3>
+            <div style="display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap;">
+              <img src="project1.jpg" alt="Project Screenshot" style="width:200px; height:auto; border-radius:12px; box-shadow:0 2px 12px rgba(7,165,217,.09); margin-bottom:10px;">
+              <video width="220" controls style="border-radius:12px; box-shadow:0 2px 12px rgba(7,165,217,.09); margin-bottom:10px;">
+                <source src="project1vid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="min-width:220px; max-width:350px;">
+                <strong>Portfolio Website Revamp</strong><br>
+                <small>Tech Stack: C++, Java, HTML, JS</small>
+                <p>
+                  It is IOT based project as we were selected in national level hackathon held by KLECET Chikodi. It was a great opportunity to connect with software enthusiasts like us.
+                </p>
+                <ul>
+                  <li>Problem statement: Building IOT based object to detect low gas pressure and gas leak</li>
+                  <li>Notify user about gas leak and low gas</li>
+                  <li>Material Used: ESP32 devkit for connecting with wifi, Software for notifying user about gas leak and low gas.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap;">
+              <img src="WhatsApp Image 2025-11-17 at 19.30.38_2c361b50.jpg" alt="Project Screenshot" style="width: 200px; height:auto; border-radius:12px; box-shadow:0 2px 12px rgba(7,165,217,.09); margin-bottom:10px;">
+              <video width="220" controls style="border-radius:12px; box-shadow:0 2px 12px rgba(7,165,217,.09); margin-bottom:10px;">
+                <source src="project2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="min-width:220px; max-width:350px;">
+                <strong>Mini Project</strong><br>
+                <small>Tech Stack: C++, IOT, Electronics</small>
+                <p>
+                  We choose this topic as it has both hardware and software rolled in and work together.
+                </p>
+                <ul>
+                  <li>Problem statement: Automation of Robotic Arm</li>
+                  <li>Pick And place as a basic operation</li>
+                  <li>Material Used: Arduino UNO, Jumper wire, C++, Arduino IDE, Ultrasonic sensor.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="MySkills" style="margin-top: 28px;">
+            <h3 style="color:#07a5d9;">Skills</h3>
+            <div class="profile-skills">
+              <div class="profile-skill-tag">HTML</div>
+              <div class="profile-skill-tag">CSS</div>
+              <div class="profile-skill-tag">JavaScript</div>
+              <div class="profile-skill-tag">React</div>
+              <div class="profile-skill-tag">UI/UX</div>
+            </div>
+          </div>
+
+          <div class="profile-achievement">
+            <div class="profile-achievement img">
+              <img src="achievement.jpg" alt="profile-achievement">
+            </div>
+            <p>Recently came runner up in Escape Asylum where the organizer tested our teamwork and how we co-operate with each other. This event was held by member of IEEE KLE Hubali, It was a great event.</p>
+          </div>
+
+          <div class="profile-achievement">
+            <div class="profile-achievement img">
+              <img src="achie2.1.jpg" alt="profile-achievement">
+              <img src="achie2.5.jpg" alt="profile-achievement">
+              <img src="achie2.4.jpg" alt="profile-achievement">
+            </div>
+            <p>🏆 Participated in INVENTRA-2K25, a 24-hour National Level Hackathon at KLE College of Engineering & Technology, Chikodi. Presented a remarkable idea recognized for its innovation and technical excellence.</p>
+          </div>
+
+          <div class="profile-links">
+            <a href="https://github.com/apsanthapa" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/apsan-thapa-0540b5294/" target="_blank">LinkedIn</a>
+            <a href="mailto:apsanthapa17@gmail.com">Email</a>
+          </div>
+        </div>
       </div>
-      <p>Recently came runnerup in Escape Asylum where the organizer tested our teamwork and how we co-operate with each other. This event was held by member of IEEE KLE Hubali, It was a great event.
-    </div>
-    <div>
-       <div class ="profile-achievement">
-        <div class ="profile-achievement img">
-      <img src="achie2.1.jpg" alt="profile-achievement">
-      <img src="achie2.5.jpg" alt="profile-achievement">
-      <img src="achie2.4.jpg" alt="profile-achievement">
-      </div>
-      <p>🏆 Participated in INVENTRA-2K25, a 24-hour National Level Hackathon at KLE College of Engineering & Technology, Chikodi. Presented a remarkable idea recognized for its innovation and technical excellence.</p>
+
+      <!-- Download Button at the Bottom -->
+      <div style="text-align: center; padding: 40px 20px;">
+        <button class="download-btn" onclick="downloadPDF()">📥 Download Portfolio as PDF</button>
       </div>
 
-  <!-- Other content, like links or recent projects, can go below -->
-    <div class="profile-links">
-      <a href="https://github.com/apsanthapa" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/apsan-thapa-0540b5294/" target="_blank">LinkedIn</a>
-      <a href="apsanthapa17@gmail.com">Email</a>
-    </div>
-  </div>
-</body>
+      <!-- JavaScript for PDF Download -->
+      <script>
+        function downloadPDF() {
+          const element = document.getElementById('content-to-download');
+          const opt = {
+            margin: 10,
+            filename: 'Apsan_Thapa_Portfolio.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+          };
+          html2pdf().set(opt).from(element).save();
+        }
+      </script>
+    </body>
+</html>
